@@ -1,7 +1,11 @@
+using Newtonsoft.Json;
+
 namespace DotnetCtrfJsonReporter
 {
     public class TestResultsModel
     {
+        [JsonProperty("schema-version")]
+        public string SchemaVersion { get; set; } = "0.0.1";
         public ResultsModel Results { get; set; } = new ResultsModel();
     }
 
