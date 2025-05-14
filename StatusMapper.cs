@@ -1,4 +1,4 @@
-namespace DotnetCtrfJsonReporter
+namespace DotnetWeathertopJsonReporter
 {
     public static class StatusMapper
     {

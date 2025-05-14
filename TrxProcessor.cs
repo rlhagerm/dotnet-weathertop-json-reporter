@@ -1,6 +1,6 @@
 using System.Xml.Linq;
 
-namespace DotnetCtrfJsonReporter
+namespace DotnetWeathertopJsonReporter
 {
     public class TrxProcessor
     {

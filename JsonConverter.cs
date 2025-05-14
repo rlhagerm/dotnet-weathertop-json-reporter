@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace DotnetCtrfJsonReporter
+namespace DotnetWeathertopJsonReporter
 {
     public class JsonConverter
     {

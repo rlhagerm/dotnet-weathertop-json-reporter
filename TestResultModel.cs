@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace DotnetCtrfJsonReporter
+namespace DotnetWeathertopJsonReporter
 {
     public class TestResultsModel
     {

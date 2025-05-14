@@ -1,16 +1,16 @@
 ﻿using CommandLine;
 
-namespace DotnetCtrfJsonReporter
+namespace DotnetWeathertopJsonReporter
 {
     public class CommandLineOptions
     {
         [Option('p', "trx-path", Required = true, HelpText = "Path to the TRX file.")]
         public required string TrxPath { get; set; }
 
-        [Option('f', "output-filename", Required = false, HelpText = "Name of the CTRF report.", Default = "ctrf-report.json")]
-        public string? CtrfReportName { get; set; }
+        [Option('f', "output-filename", Required = false, HelpText = "Name of the report.", Default = "weathertop-report.json")]
+        public string? ReportName { get; set; }
 
-        [Option('d', "output-directory", Required = false, HelpText = "Output directory for the report.", Default = "ctrf")]
+        [Option('d', "output-directory", Required = false, HelpText = "Output directory for the report.", Default = "weathertop")]
         public string? Output { get; set; }
 
         [Option('t', "test-tool", Required = false, HelpText = "Name of the test tool (nunit, mstest, xunit, etc.).", Default = "dotnet")]
@@ -32,8 +32,8 @@ namespace DotnetCtrfJsonReporter
         static void RunWithOptions(CommandLineOptions opts)
         {
             string trxFilePath = opts.TrxPath;
-            string outputFilename = EnsureJsonExtension(opts.CtrfReportName ?? "ctrf-report.json");
-            string outputDirectory = opts.Output ?? "ctrf";
+            string outputFilename = EnsureJsonExtension(opts.ReportName ?? "weathertop-report.json");
+            string outputDirectory = opts.Output ?? "weathertop";
 
             string outputFilePath = Path.Combine(outputDirectory, outputFilename);
 
@@ -52,7 +52,7 @@ namespace DotnetCtrfJsonReporter
 
             File.WriteAllText(outputFilePath, jsonContent);
 
-            Console.WriteLine($"ctrf-json-reporter successfully written ctrf json to {outputFilePath}");
+            Console.WriteLine($"weathertop-json-reporter successfully written json to {outputFilePath}");
         }
 
         static string EnsureJsonExtension(string filename)
@@ -73,7 +73,7 @@ namespace DotnetCtrfJsonReporter
 
         static void HandleParseError(IEnumerable<Error> errs)
         {
-            Console.WriteLine("error parsing ctrf-json-reporter command line arguments");
+            Console.WriteLine("error parsing weathertop-json-reporter command line arguments");
         }
     }
 }
