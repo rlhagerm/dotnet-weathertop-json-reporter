@@ -48,7 +48,7 @@ namespace DotnetCtrfJsonReporter
             {
                 Results = new ResultsModel
                 {
-                    Tool = new ToolModel { Name = "nunit" },
+                    Tool = "nunit",
                     Summary = totals,
                     Tests = tests
                 }

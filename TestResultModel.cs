@@ -7,7 +7,7 @@ namespace DotnetCtrfJsonReporter
 
     public class ResultsModel
     {
-        public ToolModel Tool { get; set; } = new ToolModel();
+        public string Tool { get; set; } = "dotnet";
         public SummaryModel Summary { get; set; } = new SummaryModel();
         public List<TestModel> Tests { get; set; } = new List<TestModel>();
     }
@@ -17,6 +17,8 @@ namespace DotnetCtrfJsonReporter
         public string Name { get; set; }
         public string Status { get; set; }
         public long Duration { get; set; }
+        public string Message { get; set; }
+        public string Log { get; set; }
     }
 
     public class ToolModel

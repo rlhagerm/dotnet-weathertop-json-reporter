@@ -45,7 +45,7 @@ namespace DotnetCtrfJsonReporter
             var trxProcessor = new TrxProcessor();
             var testResultsModel = trxProcessor.ProcessTrxFile(trxFilePath);
 
-            testResultsModel.Results.Tool.Name = opts.ToolName;
+            testResultsModel.Results.Tool = opts.ToolName;
 
             var jsonConverter = new JsonConverter();
             string jsonContent = jsonConverter.ConvertToCrtfJson(testResultsModel);
